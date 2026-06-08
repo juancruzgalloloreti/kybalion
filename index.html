@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Kybalion — Sabiduría Hermética</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400&family=Lato:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo animado con partículas -->
+    <div class="background-fx" id="particles"></div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="main-header" id="mainHeader">
+        <a href="#" class="logo" aria-label="Inicio">⚛ KYBALION</a>
+        <nav aria-label="Navegación principal">
+            <ul class="nav-links">
+                <li><a href="#principios-section" class="nav-link" data-section="principios-section">Principios</a></li>
+                <li><a href="#fundamentos" class="nav-link" data-section="fundamentos">Fundamentos</a></li>
+                <li><a href="#transmutacion-section" class="nav-link" data-section="transmutacion-section">Transmutación</a></li>
+                <li><a href="#razonamiento-section" class="nav-link" data-section="razonamiento-section">Razonamiento</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ===================== MOBILE NAV ===================== -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">✕</button>
+        <nav>
+            <ul>
+                <li><a href="#principios-section" class="mobile-nav-link">Principios</a></li>
+                <li><a href="#fundamentos" class="mobile-nav-link">Fundamentos</a></li>
+                <li><a href="#transmutacion-section" class="mobile-nav-link">Transmutación</a></li>
+                <li><a href="#razonamiento-section" class="mobile-nav-link">Razonamiento</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+    <main>
+        <!-- ================= HERO CINEMATOGRÁFICO ================= -->
+        <section class="hero" id="hero">
+            <canvas id="heroCanvas"></canvas>
+
+            <div class="hero-overlay">
+                <p class="h-eyebrow">FILOSOFÍA HERMÉTICA · EL KYBALION</p>
+
+                <div class="h-title-block">
+                    <span class="h-line h-line-1">"As Above,</span>
+                    <span class="h-line h-line-2">So Below"</span>
+                </div>
+
+                <div class="h-divider"></div>
+
+                <p class="h-subtitle">Los 7 Principios Herméticos</p>
+            </div>
+
+            <div class="hero-scroll">
+                <span class="hs-text">SCROLL</span>
+                <div class="hs-line"></div>
+            </div>
+
+            <div class="book-joint" id="bookJoint"></div>
+        </section>
+
+        <!-- ===================== BÚSQUEDA Y FILTROS ===================== -->
+        <section class="search-container" aria-label="Búsqueda y filtros">
+            <div class="search-box">
+                <span class="icon-search" aria-hidden="true">🔍</span>
+                <input type="text" id="searchInput" placeholder="Buscar en el Kybalion..." autocomplete="off" spellcheck="false">
+                <button class="search-clear" id="searchClear" aria-label="Limpiar búsqueda" hidden>✕</button>
+            </div>
+            <div class="filters" role="group" aria-label="Filtrar por categoría">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="principios">Principios</button>
+                <button class="filter-btn" data-filter="transmutacion">Transmutación</button>
+                <button class="filter-btn" data-filter="razonamiento">Razonamiento</button>
+            </div>
+            <p class="search-count" id="searchCount" aria-live="polite" hidden></p>
+        </section>
+
+        <!-- ===================== PRINCIPIOS ===================== -->
+        <section id="principios-section" class="content-section">
+            <h2 class="section-title">Los 7 Principios Herméticos</h2>
+            <div class="content-grid" id="principios-grid"></div>
+        </section>
+
+        <!-- ===================== FUNDAMENTOS (Pilares) ===================== -->
+        <!-- JS apunta a #pillars-grid, no al section entero -->
+        <section id="fundamentos" class="fundamentos-section">
+            <h2 class="section-title">Los 7 Pilares del Universo</h2>
+            <div class="pillars-grid" id="pillars-grid"></div>
+        </section>
+
+        <!-- ===================== TRANSMUTACIÓN ===================== -->
+        <section id="transmutacion-section" class="content-section">
+            <h2 class="section-title">Transmutación Mental</h2>
+            <div class="content-grid" id="transmutacion-grid"></div>
+        </section>
+
+        <!-- ===================== RAZONAMIENTO ===================== -->
+        <section id="razonamiento-section" class="reasoning-section">
+            <h2 class="section-title">Razonamiento Hermético</h2>
+            <div id="razonamiento-grid"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>☿ &nbsp; KYBALION DIGITAL · 2026 · El conocimiento es el fin.</p>
+    </footer>
+
+    <!-- ===================== MODAL DE DEEP-DIVE ===================== -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" hidden>
+        <div class="modal" id="modal" tabindex="-1">
+            <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
